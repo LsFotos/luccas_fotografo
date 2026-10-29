@@ -27,6 +27,8 @@ Coloque até sete imagens na pasta `assets`, com estes nomes:
 
 Pode usar JPG. Se tiver menos de sete fotos, tudo bem: o site mostra apenas as imagens que existirem. Para usar PNG ou WebP, altere também o nome no `index.html`.
 
+Para a galeria carregar mais rápido, as miniaturas ficam em `assets/thumbnails`, com os mesmos nomes. Ao trocar uma foto, atualize também a miniatura correspondente, redimensionada para no máximo 1200 px. Se ela não existir, o site usa o original automaticamente, mas a galeria pode demorar mais.
+
 Use fotografias que você tenha autorização para publicar, especialmente em trabalhos com crianças.
 
 ## 3. Teste no computador
@@ -47,4 +49,4 @@ Abra `index.html` no navegador. Para testar os links corretamente, configure pri
 - `index.html`: conteúdo e estrutura da página.
 - `style.css`: visual responsivo e animações leves.
 - `script.js`: links configuráveis, mensagem do WhatsApp e exibição da galeria.
-- `assets/`: suas fotografias.
+- `assets/`: originais das fotografias e miniaturas otimizadas em `assets/thumbnails/`.
