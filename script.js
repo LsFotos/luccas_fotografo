@@ -105,7 +105,7 @@ async function showPhotoInLightbox(card) {
   photoLightboxDate.dateTime = card.dataset.date;
   photoLightboxDate.textContent = `${day}/${month}/${year}`;
   const request = ++photoLightboxRequest;
-  const source = image.currentSrc || image.src;
+  const source = image.dataset.fullSrc || image.currentSrc || image.src;
   photoLightbox.classList.remove("is-error");
   photoLightbox.classList.add("is-loading");
   photoLightboxImage.removeAttribute("src");
@@ -177,6 +177,11 @@ photoCards.forEach(card => {
     updatePhotoNavigation();
   };
   const hidePhoto = () => {
+    if (image.dataset.fullSrc && !image.dataset.fullSizeFallback) {
+      image.dataset.fullSizeFallback = "true";
+      image.src = image.dataset.fullSrc;
+      return;
+    }
     card.remove();
     emptyGallery.hidden = document.querySelectorAll(".gallery-item.is-visible").length > 0;
     updatePhotoNavigation();
