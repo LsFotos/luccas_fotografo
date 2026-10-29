@@ -364,7 +364,7 @@ h2 em {
 }
 
 .gallery-item {
-  display: none;
+  display: block;
   position: relative;
   margin: 0;
   overflow: hidden;
