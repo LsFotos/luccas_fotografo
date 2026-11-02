@@ -2,13 +2,12 @@
   CONFIGURAÇÃO DOS LINKS
   1. Troque o número do WhatsApp pelo seu, com código do Brasil (55) + DDD + número.
      Use apenas números, sem espaços, parênteses ou traços.
-  2. Cole os links completos do Instagram e TikTok.
+  2. Cole o link completo do Instagram.
 */
 const CONFIG = {
   whatsappNumber: "5571988395922",
   whatsappMessage: "Olá! Gostaria de solicitar um orçamento.",
   instagramUrl: "https://www.instagram.com/luccas_fotografo/",
-  tiktokUrl: "https://www.tiktok.com/@lucaxfit"
 };
 
 const whatsappReady = /^55\d{10,11}$/.test(CONFIG.whatsappNumber);
@@ -36,9 +35,7 @@ function setLink(id, url, isReady = true) {
 ].forEach(id => setLink(id, whatsappUrl, whatsappReady));
 
 const instagramReady = !CONFIG.instagramUrl.includes("SEU_USUARIO");
-const tiktokReady = !CONFIG.tiktokUrl.includes("SEU_USUARIO");
 setLink("instagram-link", CONFIG.instagramUrl, instagramReady);
-["tiktok-link", "footer-tiktok-link"].forEach(id => setLink(id, CONFIG.tiktokUrl, tiktokReady));
 
 document.getElementById("year").textContent = new Date().getFullYear();
 

@@ -8,7 +8,6 @@ Abra `script.js` e edite o objeto `CONFIG` no começo do arquivo:
 
 - `whatsappNumber`: seu número com DDI e DDD, apenas números. Exemplo de formato: `5511999999999`.
 - `instagramUrl`: endereço completo do seu Instagram.
-- `tiktokUrl`: endereço completo do seu TikTok.
 - `whatsappMessage`: mensagem que aparecerá preenchida ao abrir a conversa.
 
 Não deixe os valores de exemplo antes de publicar.

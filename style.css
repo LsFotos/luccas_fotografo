@@ -271,6 +271,11 @@ h1 span {
   font-size: 12px;
 }
 
+.link-card--banlek .link-copy strong {
+  font-size: 10px;
+  letter-spacing: 1.6px;
+}
+
 .arrow {
   font-size: 23px;
   font-weight: 300;
