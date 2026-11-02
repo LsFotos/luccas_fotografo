@@ -29,6 +29,8 @@ Pode usar JPG. Se tiver menos de sete fotos, tudo bem: o site mostra apenas as i
 
 Para a galeria carregar mais rápido, as miniaturas ficam em `assets/thumbnails`, com os mesmos nomes. Ao trocar uma foto, atualize também a miniatura correspondente, redimensionada para no máximo 1200 px. Se ela não existir, o site usa o original automaticamente, mas a galeria pode demorar mais.
 
+As fotografias aparecem reunidas em um álbum no portfólio. A capa horizontal é feita com `foto-05.jpg`; ao clicar nela, a pessoa abre a página `album.html` com a galeria completa do ensaio.
+
 Use fotografias que você tenha autorização para publicar, especialmente em trabalhos com crianças.
 
 ## 3. Teste no computador
@@ -38,7 +40,7 @@ Abra `index.html` no navegador. Para testar os links corretamente, configure pri
 ## 4. Publique no GitHub Pages
 
 1. Entre no GitHub e crie um repositório público chamado `ls-fotografia` (ou outro nome).
-2. Envie `index.html`, `style.css`, `script.js`, `README.md` e a pasta `assets`.
+2. Envie `index.html`, `album.html`, `style.css`, `script.js`, `README.md` e a pasta `assets`.
 3. No repositório, vá em **Settings → Pages**.
 4. Em **Build and deployment**, escolha **Deploy from a branch**.
 5. Selecione a branch `main` e a pasta `/ (root)` e clique em **Save**.
@@ -47,6 +49,7 @@ Abra `index.html` no navegador. Para testar os links corretamente, configure pri
 ## Arquivos
 
 - `index.html`: conteúdo e estrutura da página.
+- `album.html`: página do álbum e galeria completa do ensaio.
 - `style.css`: visual responsivo e animações leves.
 - `script.js`: links configuráveis, mensagem do WhatsApp e exibição da galeria.
 - `assets/`: originais das fotografias e miniaturas otimizadas em `assets/thumbnails/`.

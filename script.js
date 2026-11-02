@@ -45,14 +45,16 @@ document.getElementById("year").textContent = new Date().getFullYear();
 // Só exibe fotos que realmente existam. Assim, a galeria não fica cheia de imagens quebradas.
 const photoCards = [...document.querySelectorAll("[data-photo]")];
 let loadedPhotos = 0;
+let settledPhotos = 0;
 const emptyGallery = document.getElementById("empty-gallery");
+const albumPhotoCount = document.getElementById("album-photo-count");
 const photoLightbox = document.getElementById("photo-lightbox");
 const photoLightboxImage = document.getElementById("photo-lightbox-image");
 const photoLightboxDate = document.getElementById("photo-lightbox-date");
 const photoLightboxCounter = document.getElementById("photo-lightbox-counter");
-const closePhotoLightbox = photoLightbox.querySelector(".photo-lightbox-close");
-const previousPhotoButton = photoLightbox.querySelector(".photo-lightbox-previous");
-const nextPhotoButton = photoLightbox.querySelector(".photo-lightbox-next");
+const closePhotoLightbox = photoLightbox?.querySelector(".photo-lightbox-close");
+const previousPhotoButton = photoLightbox?.querySelector(".photo-lightbox-previous");
+const nextPhotoButton = photoLightbox?.querySelector(".photo-lightbox-next");
 let lastScrollPosition = window.scrollY;
 let scrollDirection = 1;
 
@@ -95,6 +97,12 @@ function updatePhotoNavigation() {
   photoLightboxCounter.textContent = currentIndex < 0
     ? ""
     : `${String(currentIndex + 1).padStart(2, "0")} / ${String(availablePhotos.length).padStart(2, "0")}`;
+}
+
+function updateAlbumPhotoCount() {
+  if (!albumPhotoCount || settledPhotos !== photoCards.length) return;
+  const photoLabel = loadedPhotos === 1 ? "fotografia" : "fotografias";
+  albumPhotoCount.textContent = `${loadedPhotos} ${photoLabel}`;
 }
 
 async function showPhotoInLightbox(card) {
@@ -140,11 +148,13 @@ photoCards.forEach(card => {
   card.querySelector(".gallery-photo-button").addEventListener("click", () => showPhotoInLightbox(card));
 });
 
-closePhotoLightbox.addEventListener("click", () => photoLightbox.close());
-previousPhotoButton.addEventListener("click", () => moveLightboxPhoto(-1));
-nextPhotoButton.addEventListener("click", () => moveLightboxPhoto(1));
+if (photoLightbox) {
+  closePhotoLightbox.addEventListener("click", () => photoLightbox.close());
+  previousPhotoButton.addEventListener("click", () => moveLightboxPhoto(-1));
+  nextPhotoButton.addEventListener("click", () => moveLightboxPhoto(1));
+}
 document.addEventListener("keydown", event => {
-  if (!photoLightbox.open) return;
+  if (!photoLightbox?.open) return;
 
   if (event.key === "ArrowLeft") {
     event.preventDefault();
@@ -157,9 +167,11 @@ document.addEventListener("keydown", event => {
     photoLightbox.close();
   }
 });
-photoLightbox.addEventListener("click", event => {
-  if (event.target === photoLightbox) photoLightbox.close();
-});
+if (photoLightbox) {
+  photoLightbox.addEventListener("click", event => {
+    if (event.target === photoLightbox) photoLightbox.close();
+  });
+}
 
 photoCards.forEach(card => {
   const image = card.querySelector("img");
@@ -167,6 +179,7 @@ photoCards.forEach(card => {
     if (card.classList.contains("is-visible")) return;
     card.classList.add("is-visible");
     loadedPhotos++;
+    settledPhotos++;
     emptyGallery.hidden = loadedPhotos > 0;
     if (photoRevealObserver) {
       card.classList.add("is-observed");
@@ -174,6 +187,7 @@ photoCards.forEach(card => {
     } else {
       card.classList.add("is-revealed");
     }
+    updateAlbumPhotoCount();
     updatePhotoNavigation();
   };
   const hidePhoto = () => {
@@ -183,7 +197,9 @@ photoCards.forEach(card => {
       return;
     }
     card.remove();
+    settledPhotos++;
     emptyGallery.hidden = document.querySelectorAll(".gallery-item.is-visible").length > 0;
+    updateAlbumPhotoCount();
     updatePhotoNavigation();
   };
 

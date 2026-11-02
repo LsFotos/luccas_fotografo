@@ -11,11 +11,9 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Great+Vibes&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-
-
-<link rel="stylesheet" href="style.css?v=2">
+<link rel="stylesheet" href="style.css?v=4">
   
-  <script src="script.js?v=2" defer></script>
+  <script src="script.js?v=4" defer></script>
 </head>
 <body>
   <div class="ambient ambient-one" aria-hidden="true"></div>
@@ -69,63 +67,22 @@
 
     <section class="portfolio-section" id="portfolio" aria-labelledby="portfolio-title">
       <div class="section-heading">
-        <p class="eyebrow">UMA SELEÇÃO DO MEU TRABALHO</p>
-        <h2 id="portfolio-title">Por trás de cada imagem,<br><em>uma história.</em></h2>
-        <p class="section-description">Alguns momentos registrados pela LS Fotografia.</p>
+        <p class="eyebrow">REGISTROS QUE CONTAM HISTÓRIAS</p>
+        <h2 id="portfolio-title">Um ensaio,<br><em>muitas memórias.</em></h2>
+        <p class="section-description">Explore o álbum completo deste ensaio na praia.</p>
       </div>
-      <div class="gallery" id="gallery">
-        <figure class="gallery-item gallery-item--landscape" data-photo data-date="2026-10-26">
-          <button class="gallery-photo-button" type="button" aria-label="Ampliar foto do portfólio 1" aria-haspopup="dialog">
-            <img src="assets/thumbnails/foto-01.jpg" data-full-src="assets/foto-01.jpg" width="6000" height="4000" loading="lazy" decoding="async" alt="Fotografia do portfólio 1">
-          </button>
-        </figure>
-        <figure class="gallery-item gallery-item--portrait" data-photo data-date="2026-10-26">
-          <button class="gallery-photo-button" type="button" aria-label="Ampliar foto do portfólio 2" aria-haspopup="dialog">
-            <img src="assets/thumbnails/foto-02.jpg" data-full-src="assets/foto-02.jpg" width="4000" height="6000" loading="lazy" decoding="async" alt="Fotografia do portfólio 2">
-          </button>
-        </figure>
-        <figure class="gallery-item gallery-item--portrait" data-photo data-date="2026-10-26">
-          <button class="gallery-photo-button" type="button" aria-label="Ampliar foto do portfólio 3" aria-haspopup="dialog">
-            <img src="assets/thumbnails/foto-03.jpg" data-full-src="assets/foto-03.jpg" width="4000" height="5000" loading="lazy" decoding="async" alt="Fotografia do portfólio 3">
-          </button>
-        </figure>
-        <figure class="gallery-item gallery-item--landscape" data-photo data-date="2026-10-26">
-          <button class="gallery-photo-button" type="button" aria-label="Ampliar foto do portfólio 4" aria-haspopup="dialog">
-            <img src="assets/thumbnails/foto-04.jpg" data-full-src="assets/foto-04.jpg" width="6000" height="4000" loading="lazy" decoding="async" alt="Fotografia do portfólio 4">
-          </button>
-        </figure>
-        <figure class="gallery-item gallery-item--landscape" data-photo data-date="2026-10-26">
-          <button class="gallery-photo-button" type="button" aria-label="Ampliar foto do portfólio 5" aria-haspopup="dialog">
-            <img src="assets/thumbnails/foto-05.jpg" data-full-src="assets/foto-05.jpg" width="6000" height="4000" loading="lazy" decoding="async" alt="Fotografia do portfólio 5">
-          </button>
-        </figure>
-        <figure class="gallery-item gallery-item--portrait" data-photo data-date="2026-10-26">
-          <button class="gallery-photo-button" type="button" aria-label="Ampliar foto do portfólio 6" aria-haspopup="dialog">
-            <img src="assets/thumbnails/foto-06.jpg" data-full-src="assets/foto-06.jpg" width="4000" height="6000" loading="lazy" decoding="async" alt="Fotografia do portfólio 6">
-          </button>
-        </figure>
-        <figure class="gallery-item gallery-item--landscape" data-photo data-date="2026-10-26">
-          <button class="gallery-photo-button" type="button" aria-label="Ampliar foto do portfólio 7" aria-haspopup="dialog">
-            <img src="assets/thumbnails/foto-07.jpg" data-full-src="assets/foto-07.jpg" width="6000" height="4000" loading="lazy" decoding="async" alt="Fotografia do portfólio 7">
-          </button>
-        </figure>
+      <div class="photo-album">
+        <a class="album-cover" href="album.html" aria-label="Abrir álbum Entre o mar e a luz, com sete fotografias">
+          <img src="assets/thumbnails/foto-05.jpg" width="1200" height="800" loading="lazy" decoding="async" alt="" aria-hidden="true">
+          <span class="album-cover-content">
+            <span class="album-eyebrow">ÁLBUM • ENSAIO NA PRAIA</span>
+            <span class="album-title">Entre o mar e a luz</span>
+            <span class="album-meta">7 fotografias • Salvador, Bahia</span>
+            <span class="album-action">Ver álbum <span aria-hidden="true">↗</span></span>
+          </span>
+        </a>
       </div>
-      <dialog class="photo-lightbox" id="photo-lightbox" aria-label="Visualização da fotografia">
-        <button class="photo-lightbox-close" type="button" aria-label="Fechar fotografia">×</button>
-        <button class="photo-lightbox-nav photo-lightbox-previous" type="button" aria-label="Foto anterior">‹</button>
-        <img class="photo-lightbox-image" id="photo-lightbox-image" alt="">
-        <div class="photo-lightbox-caption">
-          <time class="photo-lightbox-date" id="photo-lightbox-date"></time>
-          <span class="photo-lightbox-counter" id="photo-lightbox-counter" aria-live="polite"></span>
-        </div>
-        <button class="photo-lightbox-nav photo-lightbox-next" type="button" aria-label="Próxima foto">›</button>
-      </dialog>
-      <div class="empty-gallery" id="empty-gallery">
-        <span class="empty-symbol" aria-hidden="true">＋</span>
-        <p><strong>Seu próximo registro pode estar aqui.</strong></p>
-        <p>Adicione suas fotos à pasta <code>assets</code> com os nomes <code>foto-01.jpg</code> até <code>foto-07.jpg</code>.</p>
-      </div>
-      <a class="outline-cta" id="portfolio-whatsapp" href="#" target="_blank" rel="noopener noreferrer">VAMOS REGISTRAR O SEU MOMENTO <span><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a>
+      <a class="outline-cta" id="portfolio-whatsapp" href="#" target="_blank" rel="noopener noreferrer">VAMOS REGISTRAR O SEU MOMENTO <span aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a>
     </section>
 
     <section class="about-section" aria-labelledby="about-title">
@@ -141,7 +98,7 @@
     <section class="contact-strip" aria-label="Contato">
       <p class="eyebrow">TEM UM PROJETO EM MENTE?</p>
       <h2>Vamos criar algo<br><em>memorável.</em></h2>
-      <a class="solid-cta" id="bottom-whatsapp" href="#" target="_blank" rel="noopener noreferrer">FALAR PELO WHATSAPP <span><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a>
+      <a class="solid-cta" id="bottom-whatsapp" href="#" target="_blank" rel="noopener noreferrer">FALAR PELO WHATSAPP <span aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a>
     </section>
   </main>
 
